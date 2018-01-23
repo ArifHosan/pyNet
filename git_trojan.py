@@ -67,7 +67,7 @@ class GitImporter(object):
             new_library = get_file_contents("modules/%s" % fullname)
 
             if new_library is not None:
-                self.current_module_code = base64.b16decode(new_library)
+                self.current_module_code = base64.b64decode(new_library)
                 return self
         return None
 
